@@ -1,6 +1,6 @@
 @font-face {
     font-family: Potter;
-    src: url("potter.TTF");
+    src: url("./../fonts/potter.TTF");
 }
 
 body {
