@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Potter;
+    src: url("potter.TTF");
+}
+
+body {
+    background-color: aqua;
+    font-family: Potter;
+    font-size: 3rem;
+}
