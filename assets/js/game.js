@@ -4,7 +4,12 @@ function randNum (max) {
      return Math.floor(Math.random() * Math.floor(max));
 }
 
-let currentWord = words[randNum(words.length)];
-let guesses = 10;
-let streak = 0;
+let currentWord = "";
+let guesses = 0;
+let wins = 0;
+let losses = 0;
 
+function reset () {
+     currentWord = words[randNum(words.length)];
+     guesses = 10;
+}

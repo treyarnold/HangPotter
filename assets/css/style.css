@@ -1,10 +1,15 @@
+/* Font used under freeware by fontomen https://www.fontspace.com/fontomen */
 @font-face {
     font-family: Potter;
     src: url("./../fonts/potter.TTF");
 }
 
 body {
-    background-color: aqua;
+    /* background-color: black; */
     font-family: Potter;
-    font-size: 3rem;
+    font-size: 2rem;
+}
+
+.jumbotron {
+    /* background-image: url("https://images.unsplash.com/photo-1475353152807-97f4e3315977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); */
 }
