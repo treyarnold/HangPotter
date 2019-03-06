@@ -1,11 +1,13 @@
-let words = ["Dumbledore", "Muggle", "Squib", "Basilisk", "Hippogriff", "Nagini", "Mandrake", "Bellatrix", "Draco", "Arithmancy", "Transfiguration", "Obliviate", "Riddikulus", "Sectumsempra", "Avada Kedavra", "Alohomora", "Lumos", "Expelliarmus", "Wingardium Leviosa", "Accio", "Expecto Patronum"];
-let currentWord = "";
-let numGuesses = 10;
-let wins = 0;
-let losses = 0;
-let guesses = [];
-let blanks = "";
-const input = document.querySelector('body');
+let words           = ["Dumbledore", "Muggle", "Squib", "Basilisk", "Hippogriff", "Nagini", "Mandrake", "Bellatrix", 
+                         "Draco", "Arithmancy", "Transfiguration", "Obliviate", "Riddikulus", "Sectumsempra", "Avada Kedavra", 
+                         "Alohomora", "Lumos", "Expelliarmus", "Wingardium Leviosa", "Accio", "Expecto Patronum"];
+let currentWord     = "";
+let numGuesses      = 10;
+let wins            = 0;
+let losses          = 0;
+let guesses         = [];
+let blanks          = "";
+const input         = document.querySelector('body');
 
 input.addEventListener('keydown', checkLetter);
 
@@ -40,13 +42,12 @@ function reset () {
      document.getElementById("guesses").textContent = numGuesses;
      document.getElementById("blanks").textContent = blanks;
      document.getElementById("guessed").textContent = guesses;
-     // document.getElementById("result").textContent = currentWord;
 }
 
 function winner () {
      let result = document.getElementById("result")
      result.style.color = "green";
-     result.textContent = "You got it!";
+     result.textContent = "Mischief Managed";
      wins += 1;
      document.getElementById("wins").textContent = wins;
      reset();
