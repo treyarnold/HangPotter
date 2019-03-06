@@ -17,3 +17,11 @@ body {
 #blanks {
     letter-spacing: 1rem;
 }
+
+#wins {
+    color: green;
+}
+
+#losses {
+    color: red;
+}
