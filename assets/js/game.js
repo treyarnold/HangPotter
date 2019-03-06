@@ -21,10 +21,10 @@ function reset () {
      numGuesses = 10;
      for (var i = 0; i < currentWord.length; i++) {
           if (currentWord[i] == " ") {
-               blanks += " / ";
+               blanks += "/";
           }
           else {
-               blanks += "_ ";
+               blanks += "_";
           }
      }
      document.getElementById("blanks").textContent = blanks;
@@ -32,13 +32,14 @@ function reset () {
 }
 
 function correct (letter) {
+     newBlanks = "";
      for (var i = 0; i < currentWord.length; i++) {
           if (currentWord[i].toLowerCase() == letter) {
-               blanks += letter + " ";
+               NewBlanks += letter;
           } else if (currentWord[i] == " ") {
-               blanks += " / ";
+               NewBlanks += " / ";
           } else {
-               blanks += "_ ";
+               NewBlanks += "_";
           }
      }
      guesses.push(letter);
@@ -52,7 +53,7 @@ function correct (letter) {
 
 function checkLetter(event) {
      let letter = event.key;
-     if (!(letter in guesses)) {
+     if (!(guesses.includes(letter.toLowerCase()))) {
           if (currentWord.includes(letter)) {
                correct(letter);
           } else {
