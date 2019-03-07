@@ -50,6 +50,7 @@ function winner () {
      result.textContent = "Mischief Managed";
      wins += 1;
      document.getElementById("wins").textContent = wins;
+     document.getElementById("previogit stus").textContent = "The word was " + currentWord;
      reset();
 }
 
@@ -59,6 +60,7 @@ function loser () {
      result.textContent = "You're a Muggle";
      losses += 1;
      document.getElementById("losses").textContent = losses;
+     document.getElementById("previous").textContent = "The word was " + currentWord;
      reset();
 }
 
