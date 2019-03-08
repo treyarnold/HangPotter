@@ -50,7 +50,7 @@ function winner () {
      result.textContent = "Mischief Managed";
      wins += 1;
      document.getElementById("wins").textContent = wins;
-     document.getElementById("previogit stus").textContent = "The word was " + currentWord;
+     document.getElementById("previous").textContent = "The word was " + currentWord;
      reset();
 }
 
