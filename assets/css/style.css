@@ -30,24 +30,24 @@ body {
     }
 }
 
-div div div div div:nth-of-type(4n+0) {
+.col-1:nth-of-type(4n+0) {
     background: linear-gradient(90deg, rgb(31,30,25) 50%, rgb(255,157,11) 50%);
 }
 
-div div div div div:nth-of-type(4n+1) {
+.col-1:nth-of-type(4n+1) {
     background: linear-gradient(90deg, rgb(102,0,0) 50%, rgb(224,156,9) 50%);
 }
 
-div div div div div:nth-of-type(4n+2) {
+.col-1:nth-of-type(4n+2) {
     background: linear-gradient(90deg, rgb(47,117,28) 50%, rgb(204,204,204) 50%);
 }
 
-div div div div div:nth-of-type(4n+3) {
+.col-1:nth-of-type(4n+3) {
     background: linear-gradient(90deg, rgb(26,57,86) 50%, rgb(142,80,29) 50%);
 }
 
-.row .col-md-6 .row .blank {
-    background-color: white;
+.row .blank {
+    background: white;
     border: none;
 }
 

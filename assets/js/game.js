@@ -31,7 +31,7 @@ let game            = {
           document.getElementById("guessed").textContent = game.guesses;
           for (let i =10; i < 36; i++) {
                let id = i.toString(36);
-               document.getElementById(id).classList.remove("d-none");
+               document.getElementById(id).classList.remove("blank");
           }
      },
 
@@ -99,7 +99,7 @@ let game            = {
                if (!(game.guesses.includes(letter.toLowerCase()))) {
                     game.guesses.push(letter);
                     document.getElementById("guessed").textContent = game.guesses;
-                    document.getElementById(letter).classList.add("d-none");
+                    document.getElementById(letter).classList.add("blank");
                     if (lowerWord.includes(letter)) {
                          game.correct(letter);
                     } else {
