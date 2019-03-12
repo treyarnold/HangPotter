@@ -29,6 +29,10 @@ let game            = {
           document.getElementById("guesses").textContent = game.numGuesses;
           document.getElementById("blanks").textContent = game.blanks;
           document.getElementById("guessed").textContent = game.guesses;
+          for (let i =10; i < 36; i++) {
+               let id = i.toString(36);
+               document.getElementById(id).classList.remove("d-none");
+          }
      },
 
      winner : function () {
@@ -84,18 +88,35 @@ let game            = {
      },
 
      checkLetter: function (event) {
-          let letter = event.key;
+          let letter;
+          if (typeof(event) === "object"){
+               letter = event.key;
+          } else {
+               letter = event;
+          }
           let lowerWord = game.currentWord.toLowerCase();
           if ((isAlphaCharacter(letter) && (letter.length == 1))) {
                if (!(game.guesses.includes(letter.toLowerCase()))) {
                     game.guesses.push(letter);
                     document.getElementById("guessed").textContent = game.guesses;
+                    document.getElementById(letter).classList.add("d-none");
                     if (lowerWord.includes(letter)) {
                          game.correct(letter);
                     } else {
                          game.wrong(letter);
                     }
                }
+          }
+     }, 
+
+     clickListeners: function () {
+          for (let i =10; i < 36; i++) {
+               let id = i.toString(36);
+               // console.log(id);
+               let button = document.getElementById(id);
+               button.addEventListener("click", function(){
+                    game.checkLetter(this.id);
+               })
           }
      }
 }
@@ -113,4 +134,5 @@ function randNum (max) {
 }
 
 input.addEventListener('keydown', game.checkLetter);
+game.clickListeners();
 game.reset();
