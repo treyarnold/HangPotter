@@ -14,12 +14,12 @@ let game            = {
           let lastWord = game.currentWord;
           game.blanks = "";
           game.guesses = [];
-          while (lastWord == game.currentWord) {
+          while (lastWord === game.currentWord) {
                game.currentWord = game.words[randNum(game.words.length)];
           }
           game.numGuesses = 10;
           for (var i = 0; i < game.currentWord.length; i++) {
-               if (game.currentWord[i] == " ") {
+               if (game.currentWord[i] === " ") {
                     game.blanks += "/";
                }
                else {
@@ -58,11 +58,11 @@ let game            = {
      correct: function (letter) {
           let newBlanks = "";
           for (var i = 0; i < game.currentWord.length; i++) {
-               if ((isAlphaCharacter(game.blanks[i])) || (game.blanks[i] == "/")) {
+               if ((isAlphaCharacter(game.blanks[i])) || (game.blanks[i] === "/")) {
                     newBlanks += game.blanks[i];
                } else {
-                    if (game.currentWord[i].toLowerCase() == letter) {
-                         if ((i == 0) || (newBlanks[i-1] == "/")) {
+                    if (game.currentWord[i].toLowerCase() === letter) {
+                         if ((i === 0) || (newBlanks[i-1] === "/")) {
                               newBlanks += letter.toUpperCase();
                          } else {
                               newBlanks += letter;
@@ -82,7 +82,7 @@ let game            = {
      wrong: function (letter) {
           game.numGuesses -= 1;
           document.getElementById("guesses").textContent = game.numGuesses;
-          if (game.numGuesses == 0) {
+          if (game.numGuesses === 0) {
                game.loser ();
           }
      },
@@ -95,7 +95,7 @@ let game            = {
                letter = event;
           }
           let lowerWord = game.currentWord.toLowerCase();
-          if ((isAlphaCharacter(letter) && (letter.length == 1))) {
+          if ((isAlphaCharacter(letter) && (letter.length === 1))) {
                if (!(game.guesses.includes(letter.toLowerCase()))) {
                     game.guesses.push(letter);
                     document.getElementById("guessed").textContent = game.guesses;
